@@ -1,0 +1,58 @@
+{
+	"version": "1.0.0",
+	"name": "@cmorales_/open",
+	"module": "dist/index.js",
+	"type": "module",
+	"private": false,
+	"description": "If you need to open a explorer or open a web from the terminal, It is your package.",
+	"license": "MIT",
+	"repository": {
+		"type": "github",
+		"url": "git+https://github.com/Cristian-F-M/open.git"
+	},
+	"author": {
+		"email": "cfmorales.diaz@gmail.com",
+		"name": "Cristian Morales",
+		"url": "https://cmorales.work"
+	},
+	"keywords": [
+		"cli",
+		"browser",
+		"explorer",
+		"path",
+		"url",
+		"cmorales",
+		"open"
+	],
+	"scripts": {
+		"build": "tsup cli.ts index.ts --format esm --dts --clean --splitting false",
+		"release": "bun run build && npm publish --access public"
+	},
+	"bin": {
+		"open": "dist/cli.js"
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"package.json",
+		"LICENSE"
+	],
+	"devDependencies": {
+		"@biomejs/biome": "2.4.15",
+		"@types/bun": "latest",
+		"@types/columnify": "1.5.4",
+		"@types/update-notifier": "6.0.8",
+		"columnify": "1.6.0",
+		"tsup": "8.5.1"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"dependencies": {
+		"boxen": "8.0.1",
+		"cfonts": "3.3.1",
+		"picocolors": "1.1.1",
+		"pupa": "3.3.0",
+		"update-notifier": "7.3.1"
+	}
+}
