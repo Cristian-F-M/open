@@ -1,7 +1,7 @@
 import pkg from '@./package.json'
 import cfonts from 'cfonts'
 import columnify from 'columnify'
-import * as pc from 'picocolors'
+import pc from 'picocolors'
 import { indent } from '@/utils'
 
 export const DOCS_URL =

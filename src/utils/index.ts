@@ -1,6 +1,6 @@
 import { exec, spawn } from 'node:child_process'
 import { info } from 'node:console'
-import { green, underline } from 'picocolors'
+import pc from 'picocolors'
 import updateNotifier from 'update-notifier'
 import { error, success } from '@/utils/logger'
 
@@ -46,7 +46,7 @@ export async function selfUpdate() {
 
 	info('Upgrading package...\n')
 	await updateCli()
-	success(`Package upgraded successfully to ${underline(green(`v${latest}`))}`)
+	success(`Package upgraded successfully to ${pc.underline(pc.green(`v${latest}`))}`)
 	process.exit(0)
 }
 
