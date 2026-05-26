@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import pkg from '@./package.json'
 import path from 'node:path'
 import util from 'node:util'
 import boxen from 'boxen'
@@ -11,6 +10,7 @@ import { parserConfig } from '@/constants/parser'
 import { selfUpdate } from '@/utils'
 import { printDocs, printHelp } from '@/utils/help'
 import { open } from '.'
+import pkg from './package.json'
 
 const notifier = updateNotifier({
 	pkg,
