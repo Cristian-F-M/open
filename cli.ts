@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-import path from 'node:path'
 import util from 'node:util'
 import boxen from 'boxen'
 import pupa from 'pupa'
@@ -7,9 +5,9 @@ import updateNotifier from 'update-notifier'
 import { openingMessage } from '@/constants'
 import { needUpdateMessage } from '@/constants/help'
 import { parserConfig } from '@/constants/parser'
-import { selfUpdate } from '@/utils'
-import { printDocs, printHelp } from '@/utils/help'
-import { log } from '@/utils/logger'
+import { selfUpdate } from '@/utils/cli/'
+import { printDocs, printHelp } from '@/utils/cli/help'
+import { log } from '@/utils/cli/logger'
 import { open } from '.'
 import pkg from './package.json'
 
