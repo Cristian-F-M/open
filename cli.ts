@@ -51,10 +51,9 @@ async function main() {
 		}
 
 		const rawDir = positionals.at(0) || (values.path as string)
-		const dir = path.resolve(rawDir)
 
 		console.log(pupa(openingMessage, { dir: rawDir }))
-		open(dir)
+		open(rawDir)
 	} catch (error: unknown) {
 		if (error instanceof Error) {
 			console.error(error.message)
