@@ -9,6 +9,7 @@ import { needUpdateMessage } from '@/constants/help'
 import { parserConfig } from '@/constants/parser'
 import { selfUpdate } from '@/utils'
 import { printDocs, printHelp } from '@/utils/help'
+import { log } from '@/utils/logger'
 import { open } from '.'
 import pkg from './package.json'
 
@@ -19,6 +20,8 @@ const notifier = updateNotifier({
 
 process.on('beforeExit', async (code) => {
 	const { latest, current } = await notifier.fetchInfo()
+
+	if (current === latest) process.exit(code)
 
 	console.log(
 		boxen(pupa(needUpdateMessage, { latest, current }), {
@@ -43,6 +46,10 @@ async function main() {
 
 		if (values.help) return printHelp()
 		if (values.docs) return printDocs()
+		if (values.version) {
+			log(`${pkg.name} ${pkg.version}`)
+			return
+		}
 
 		const rawDir = positionals.at(0) || (values.path as string)
 		const dir = path.resolve(rawDir)
