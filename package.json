@@ -25,7 +25,7 @@
 		"open"
 	],
 	"scripts": {
-		"build": "tsup cli.ts index.ts --format esm --dts --clean --splitting false",
+		"build": "tsup --clean",
 		"release": "node scripts/release.ts"
 	},
 	"bin": {
