@@ -2,7 +2,7 @@ import pkg from '@./package.json'
 import cfonts from 'cfonts'
 import columnify from 'columnify'
 import pc from 'picocolors'
-import { indent } from '@/utils'
+import { indent } from '@/utils/cli'
 
 export const DOCS_URL =
 	'https://github.com/Cristian-F-M/open?tab=readme-ov-file#cmorales_open'
