@@ -18,8 +18,13 @@ const notifier = updateNotifier({
 	updateCheckInterval: 0
 })
 
+let fetched = false
 process.on('beforeExit', async () => {
+	if (fetched) return
+
 	const { latest, current } = await notifier.fetchInfo()
+
+	fetched = true
 
 	if (current === latest) return
 
