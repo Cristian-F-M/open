@@ -19,6 +19,11 @@ export const parserConfig = {
 			default: false,
 			short: 'd'
 		},
+		version: {
+			type: 'boolean',
+			default: false,
+			short: 'v'
+		},
 		help: {
 			type: 'boolean',
 			short: 'h'
