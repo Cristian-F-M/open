@@ -30,6 +30,8 @@ try {
 		execSync(`npm version ${versionType}`, { stdio: 'inherit' })
 	}
 
+	execSync('npm run build', { stdio: 'ignore' })
+
 	section('Publishing package')
 	execSync('npm publish --access public', { stdio: 'inherit' })
 
