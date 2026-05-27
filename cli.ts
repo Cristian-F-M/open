@@ -11,14 +11,14 @@ import { log } from '@/utils/cli/logger'
 import { open } from '.'
 import pkg from './package.json'
 
-const notifier = updateNotifier({
-	pkg,
-	updateCheckInterval: 0
-})
-
 let fetched = false
 process.on('beforeExit', async () => {
 	if (fetched) return
+
+	const notifier = updateNotifier({
+		pkg,
+		updateCheckInterval: 0
+	})
 
 	const { latest, current } = await notifier.fetchInfo()
 
