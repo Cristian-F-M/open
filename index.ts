@@ -23,7 +23,7 @@ import { openExplorer, openNavigator } from '@/utils'
  * // Open files          - Opens files using the system default application (e.g., open ./index.ts).
  */
 
-export function open(url: string) {
+export function open(url: string = './') {
 	if (['http', 'www'].some((s) => url.startsWith(s))) {
 		openNavigator(url)
 		return
