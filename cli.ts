@@ -18,10 +18,10 @@ const notifier = updateNotifier({
 	updateCheckInterval: 0
 })
 
-process.on('beforeExit', async (code) => {
+process.on('beforeExit', async () => {
 	const { latest, current } = await notifier.fetchInfo()
 
-	if (current === latest) process.exit(code)
+	if (current === latest) return
 
 	console.log(
 		boxen(pupa(needUpdateMessage, { latest, current }), {
@@ -32,7 +32,6 @@ process.on('beforeExit', async (code) => {
 			borderStyle: 'round'
 		})
 	)
-	process.exit(code)
 })
 
 async function main() {
